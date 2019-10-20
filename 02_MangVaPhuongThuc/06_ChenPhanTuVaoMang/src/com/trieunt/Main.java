@@ -17,7 +17,8 @@ public class Main {
         System.out.print("Nhập giá trị phần tử cần thêm: ");
         int element = scanner.nextInt();
         System.out.print("Mảng sau khi thêm là: ");
-        displayAllElementInArray(addNewAElement(position, myArr, element));
+        int[] newArr = addNewAElement(position, myArr, element);
+        displayAllElementInArray(newArr);
 
     }
 
@@ -48,7 +49,6 @@ public class Main {
         int[] newArr = Arrays.copyOf(myArray, myArray.length+1);
         for (int i = newArr.length-2; i >= position; i--) {
             newArr[i+1] = newArr[i];
-
         }
         newArr[position] = element;
         return newArr;
